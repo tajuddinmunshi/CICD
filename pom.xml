@@ -34,11 +34,39 @@
         </dependency>
     </dependencies>
     <build>
-        <plugins>
+     <plugins>
+    			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+			</plugin>
+			<plugin>
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+        <url>http://192.168.218.144:8082/manager/text</url>
+        <server>localtomcat</server>
+        <path>/savage2</path>
+    </configuration>
+</plugin>
+       
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+<repository>
+ <id>localnexus</id>
+ <name>MyCo Internal Repository</name>
+ <url>http://192.168.218.144:8081/nexus/content/repositories/Repo</url>
+</repository>
+<snapshotRepository>
+ <id>localnexus</id>
+ <name>Your Snapshot Repository</name>
+ <url>http://192.168.218.144:8081/nexus/content/repositories/snapshots</url>
+</snapshotRepository>
+</distributionManagement>
 </project>
