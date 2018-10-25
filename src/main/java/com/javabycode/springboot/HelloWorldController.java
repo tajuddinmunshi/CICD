@@ -10,7 +10,7 @@ public class HelloWorldController {
     @RequestMapping("/hello")
     public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="Taj") String name) {
         
-        String message="You are a Role Model";
+        String message="You are a Role Model!!";
         model.addAttribute("name", name);
         model.addAttribute("message", message);
         
