@@ -75,7 +75,7 @@
     <configuration>
         <url>http://192.168.218.144:8082/manager/text</url>
         <server>localtomcat</server>
-        <path>/springbootexample4</path>
+        <path>/springbootexample5</path>
     </configuration>
 </plugin>
        
